@@ -1,0 +1,15 @@
+package castelo.gabriel.transacaoapi.estatisticas;
+
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.validation.annotation.Validated;
+
+@ConfigurationProperties(prefix = "estatistica")
+@Validated
+public record EstatisticaProperties(
+        @NotNull
+        @Positive
+        Integer segundos
+) {
+}
